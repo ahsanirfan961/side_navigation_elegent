@@ -77,16 +77,7 @@ class _SideNavigationBarItemWidgetState
                   color: _evaluateBackgroundColor(isSelected),
                   shape: widget.itemTheme.iconShape,
                 ),
-                child: IconButton(
-                  icon: Icon(
-                    widget.itemData.icon,
-                    color: currentColor,
-                    size: widget.itemTheme.iconSize,
-                  ),
-                  onPressed: () {
-                    widget.onTap(widget.index);
-                  },
-                ),
+                child: widget.itemData.button,
               ),
             ),
     );

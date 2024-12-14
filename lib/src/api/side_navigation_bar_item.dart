@@ -8,9 +8,12 @@ class SideNavigationBarItem {
   /// A text to display route information
   final String label;
 
+  final Widget button;
+
   /// Item data
   const SideNavigationBarItem({
     required this.icon,
     required this.label,
+    required this.button,
   });
 }
