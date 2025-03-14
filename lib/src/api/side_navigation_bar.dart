@@ -35,6 +35,8 @@ class SideNavigationBar extends StatefulWidget {
   /// Optional toggler widget
   final SideBarToggler? toggler;
 
+  final Color? backgroundColor;
+
   /// Theme data of the bar.
   /// If nothing or null is passed it defaults to [SideNavigationBarTheme.standard]
   final SideNavigationBarTheme? theme;
@@ -56,6 +58,7 @@ class SideNavigationBar extends StatefulWidget {
     this.footer,
     this.toggler,
     this.theme,
+    this.backgroundColor,
     this.expandable = true,
     this.initiallyExpanded = true,
   }) : super(key: key);
@@ -98,7 +101,7 @@ class _SideNavigationBarState extends State<SideNavigationBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: _theme.backgroundColor,
+        color: widget.backgroundColor ?? _theme.backgroundColor,
         border: _evaluateMainDivider(),
       ),
       child: AnimatedSize(
